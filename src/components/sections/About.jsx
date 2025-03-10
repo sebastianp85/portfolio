@@ -1,7 +1,24 @@
 import { RevealOnScroll } from "../RevealOnScroll";
 export const About = () => {
-  const frontendSkills = ["JavaScript", "CSS", "HTML", "React", "TailwindCSS"];
-  const backendSkills = ["Node,js", "Springboot", "Java", "MongoDB"];
+  const frontendSkills = [
+    "JavaScript",
+    "TypeScript",
+    "React",
+    "HTML",
+    "CSS",
+    "TailwindCSS",
+    "Bootstrap",
+    "daisyUI",
+  ];
+  const backendSkills = [
+    "Node,js",
+    "Springboot",
+    "Java",
+    "MongoDB",
+    "RestAPI",
+    "SQL",
+    "noSQL",
+  ];
   return (
     <section
       id="about"
