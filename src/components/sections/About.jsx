@@ -79,37 +79,53 @@ export const About = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
             <div className="p-6 rounded-xl border-white/10 border hover:-translate-y-1 transition-all">
-              <h3 className="text-xl font-bold mb-4 "> Education</h3>
-              <ul className="list-disc list-inside text-gray-300 space-y-2">
+              <h3 className="text-xl font-bold mb-4">Education</h3>
+              <div className="text-gray-300 space-y-4">
                 <div>
-                  <h4 className="font-semibold">
+                  <h4 className="font-semibold text-lg">
                     Cybersecurity - Stockholms tekniska institut (2025 -
                     Present)
                   </h4>
-                  <p>Developed and maintained microservices for cloud</p>
                 </div>
-                <li>
-                  Relevant Coursework: Data structures, Web Development, Cloud
-                  Computing
-                </li>
-              </ul>
+                <div>
+                  <h4 className="font-semibold text-lg">
+                    Fullstackutvecklare JavaScript - Teknikhögskolan Lund (2022
+                    - 2024)
+                  </h4>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-lg">
+                    IHM Business Management - Malmö (2019 - 2020)
+                  </h4>
+                </div>
+              </div>
             </div>
+
+            {/* Work Experience Section */}
             <div className="p-6 rounded-xl border-white/10 border hover:-translate-y-1 transition-all">
-              <h3 className="text-xl font-bold mb-4 "> Work Experience</h3>
+              <h3 className="text-xl font-bold mb-4">Work Experience</h3>
               <div className="space-y-4 text-gray-300">
                 <div>
-                  <h4 className="font-semibold">
-                    Software Engineer at ABC Corp (2020 - Present)
-                  </h4>
-                  <p>Developed and maintained microservices for cloud</p>
-                </div>
-                <div>
-                  <h4 className="font-semibold">
-                    Intern at DEF Startup (2019)
+                  <h4 className="font-semibold text-lg">
+                    Columbus Commerce, Malmö / Helsingborg (Intership 2024)
                   </h4>
                   <p>
-                    Assisted in building fronend components and integration REST
-                    APIs
+                    I developed an application to update user roles through
+                    Excel imports and API/database integration. I also created
+                    templates for generating product specifications as PDFs from
+                    API data and developed a console application for managing
+                    user roles
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-lg">
+                    Svensk Cater, Löddeköpinge (Internship 2023)
+                  </h4>
+                  <p>
+                    I developed a recipe section to allow customers to create
+                    new recipes and gain inspiration. I also started building a
+                    light version of their webshop, enabling users to log in and
+                    select a delivery date for their orders
                   </p>
                 </div>
               </div>

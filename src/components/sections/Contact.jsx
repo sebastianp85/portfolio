@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { RevealOnScroll } from "../RevealOnScroll";
 import emailjs from "emailjs-com";
+import DOMPurify from "dompurify";
 
 export const Contact = () => {
   const [formData, setFormData] = useState({
@@ -12,11 +13,33 @@ export const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    // Validering av fälten
+    if (!formData.name || !formData.email || !formData.message) {
+      alert("All fields are required.");
+      return;
+    }
+
+    if (!/\S+@\S+\.\S+/.test(formData.email)) {
+      alert("Please enter a valid email address.");
+      return;
+    }
+
+    // Sanera användardata för att förhindra XSS-attacker
+    const sanitizedData = {
+      name: DOMPurify.sanitize(formData.name),
+      email: DOMPurify.sanitize(formData.email),
+      message: DOMPurify.sanitize(formData.message, {
+        ALLOWED_TAGS: [], // Ta bort alla taggar
+        ALLOWED_ATTR: [], // Ta bort alla attribut
+      }),
+    };
+
+    // Skicka den sanerade datan via emailjs
     emailjs
-      .sendForm(
+      .send(
         import.meta.env.VITE_SERVICE_ID,
         import.meta.env.VITE_TEMPLATE_ID,
-        e.target,
+        sanitizedData, // Skicka den sanerade datan här
         import.meta.env.VITE_PUBLIC_KEY
       )
       .then((result) => {
@@ -25,6 +48,7 @@ export const Contact = () => {
       })
       .catch(() => alert("Oops! Something went wrong. Please try again!"));
   };
+
   return (
     <section
       id="contact"
@@ -59,7 +83,7 @@ export const Contact = () => {
                 required
                 value={formData.email}
                 className="w-full bg-white/5 border border-white/10 rounded px-4 py-3 text-white transition focus:outline-none focus:border-blue-500 focus:bg-blue-500/5"
-                placeholder="example@mail.com"
+                placeholder="Example@mail.com"
                 onChange={(e) =>
                   setFormData({ ...formData, email: e.target.value })
                 }
