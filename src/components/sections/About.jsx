@@ -107,7 +107,7 @@ export const About = () => {
               <div className="space-y-4 text-gray-300">
                 <div>
                   <h4 className="font-semibold text-lg">
-                    Columbus Commerce, Malmö / Helsingborg (Intership 2024)
+                    Columbus Commerce, Malmö / Helsingborg (Internship 2024)
                   </h4>
                   <p>
                     I developed an application to update user roles through
