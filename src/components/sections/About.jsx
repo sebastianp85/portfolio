@@ -11,7 +11,7 @@ export const About = () => {
     "daisyUI",
   ];
   const backendSkills = [
-    "Node,js",
+    "Node.js",
     "Springboot",
     "Java",
     "MongoDB",
