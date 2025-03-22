@@ -20,6 +20,7 @@ export const About = () => {
     "noSQL",
   ];
   const cybersecuritySkills = [
+    "Pre Security Certificate - Tryhackme",
     "Network fundamentals",
     "Linux fundamentals",
     "Windows fundamentals",
