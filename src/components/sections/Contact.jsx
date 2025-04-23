@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { RevealOnScroll } from "../RevealOnScroll";
-import emailjs from "emailjs-com";
+import emailjs from "@emailjs/browser"; // ✅ Ny import
 import DOMPurify from "dompurify";
 
 export const Contact = () => {
@@ -10,10 +10,14 @@ export const Contact = () => {
     message: "",
   });
 
+  // ✅ Initiera EmailJS när komponenten laddas
+  useEffect(() => {
+    emailjs.init(import.meta.env.VITE_PUBLIC_KEY);
+  }, []);
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Validering av fälten
     if (!formData.name || !formData.email || !formData.message) {
       alert("All fields are required.");
       return;
@@ -24,22 +28,19 @@ export const Contact = () => {
       return;
     }
 
-    // Sanera användardata för att förhindra XSS-attacker
     const sanitizedData = {
       name: DOMPurify.sanitize(formData.name),
       email: DOMPurify.sanitize(formData.email),
       message: DOMPurify.sanitize(formData.message),
     };
 
-    // Skicka datan via emailjs utan att bryta formuläret
     emailjs
       .send(
         import.meta.env.VITE_SERVICE_ID,
         import.meta.env.VITE_TEMPLATE_ID,
-        sanitizedData, // Skicka den sanerade datan här
-        import.meta.env.VITE_PUBLIC_KEY
+        sanitizedData
       )
-      .then((result) => {
+      .then(() => {
         alert("Message Sent!");
         setFormData({ name: "", email: "", message: "" });
       })
@@ -103,7 +104,7 @@ export const Contact = () => {
 
             <button
               type="submit"
-              className="w-full bg-blue-500 text-white py-3 px-6 rounded font-medium transition relatice overflow-hidden hover:-translate-y-0.5 hover:shadow-[0_0_15px_rgba(59,130,246,0,4)]"
+              className="w-full bg-blue-500 text-white py-3 px-6 rounded font-medium transition relative overflow-hidden hover:-translate-y-0.5 hover:shadow-[0_0_15px_rgba(59,130,246,0.4)]"
             >
               Send Message
             </button>
