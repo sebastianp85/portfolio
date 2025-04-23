@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { RevealOnScroll } from "../RevealOnScroll";
-import emailjs from "@emailjs/browser"; // ✅ Ny import
+import emailjs from "@emailjs/browser";
 import DOMPurify from "dompurify";
 
 export const Contact = () => {
@@ -10,7 +10,6 @@ export const Contact = () => {
     message: "",
   });
 
-  // ✅ Initiera EmailJS när komponenten laddas
   useEffect(() => {
     emailjs.init(import.meta.env.VITE_PUBLIC_KEY);
   }, []);

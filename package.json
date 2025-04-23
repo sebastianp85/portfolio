@@ -13,12 +13,8 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
-<<<<<<< HEAD
     "@emailjs/browser": "^4.4.1",
     "@tailwindcss/vite": "^4.0.4",
-=======
-    "@tailwindcss/vite": "^4.0.15",
->>>>>>> a3f37d3c4383d786698d2348d499d73947bdfd1a
     "dompurify": "^3.2.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
