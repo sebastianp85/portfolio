@@ -20,7 +20,11 @@ export const About = () => {
     "noSQL",
   ];
   const cybersecuritySkills = [
-    "Pre Security Certificate - Tryhackme",
+    "Threat Modeling",
+    "Risk Analysis",
+    "Security Awareness",
+    "Vulnerability Management",
+    "CVSS 4.0",
     "Network fundamentals",
     "Linux fundamentals",
     "Windows fundamentals",
@@ -104,8 +108,7 @@ export const About = () => {
               <div className="text-gray-300 space-y-4">
                 <div>
                   <h4 className="font-semibold text-lg">
-                    Cybersecurity - Stockholms tekniska institut (2025 -
-                    Present)
+                    Cybersecurity - Stockholms tekniska institut (2025)
                   </h4>
                 </div>
                 <div>
@@ -117,6 +120,12 @@ export const About = () => {
                 <div>
                   <h4 className="font-semibold text-lg">
                     IHM Business Management - Malmö (2019 - 2020)
+                  </h4>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-lg">
+                    Higher Education Diploma with specialization in Food Science
+                    - Lunds Universitet (2011 - 2012)
                   </h4>
                 </div>
               </div>
@@ -147,6 +156,19 @@ export const About = () => {
                     new recipes and gain inspiration. I also started building a
                     light version of their webshop, enabling users to log in and
                     select a delivery date for their orders
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-lg">
+                    SP Chark, Asmundtorp / Billeberga (2005-Present)
+                  </h4>
+                  <p>
+                    I’ve held a broad role supporting both operational and
+                    strategic areas. My work includes B2B sales, quality
+                    assurance, internal inspections, and digital initiatives
+                    like maintaining the company website. This role has
+                    strengthened my ability to bridge business needs with
+                    technical solutions in real-world situations.
                   </p>
                 </div>
               </div>
